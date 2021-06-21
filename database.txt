@@ -1,0 +1,13 @@
+create database employee123;
+use employee123;
+ 
+CREATE TABLE `Emp` (
+    `empid` int(11) NOT NULL AUTO_INCREMENT,
+    `empfname` varchar(45) NOT NULL,
+    `emplname` varchar(45) NOT NULL,
+    `phnum` varchar(45) NOT NULL,
+    `email` varchar(45) NOT NULL,
+    `dept` varchar(45) NOT NULL,
+    `salary` int(11) NOT NULL,
+    PRIMARY KEY (`empid`)
+);
