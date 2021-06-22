@@ -1,0 +1,39 @@
+public static void select1(){
+		
+		String dbURL = "jdbc:mysql://172.17.10.152:3306/employee123";
+		String username = "root";
+		String password = "password";
+		
+		try {
+			 
+			   Connection conn = DriverManager.getConnection(dbURL, username, password);
+			    if (conn != null) {
+			        System.out.println("Connected");
+			    }
+		
+		String sql = "SELECT * FROM emp";
+		 
+		Statement statement = conn.createStatement();
+		ResultSet result = statement.executeQuery(sql);
+		 
+		int count = 0;
+		 
+		while (result.next()){
+		    String fname = result.getString(2);
+		    String lname = result.getString(3);
+		    String phnum = result.getString("phnum");
+		    String email = result.getString("email");
+		    
+		 
+		    String output = "User #%d: %s - %s - %s - %s";
+		    System.out.println(String.format(output, ++count, fname, lname, phnum, email));
+		}
+		
+		
+	}
+		catch (SQLException ex) {
+		    ex.printStackTrace();
+		}
+		
+		
+	}
