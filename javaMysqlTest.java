@@ -19,6 +19,6 @@ public class javaMysqlTest {
 		    select1();
 		    update1();
 		    delete1();		
-		}
+		 }
 	
 }
